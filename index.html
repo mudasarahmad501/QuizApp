@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz App</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <hr>
+    <div class="container">
+        
+        <main>
+            <section id="create-quiz">
+                <h2>Create a New Quiz</h2>
+                <form id="quiz-form">
+                    <input type="text" id="quiz-title" placeholder="Quiz Title" required>
+                    <input type="text" id="quiz-description" placeholder="Quiz Description" required>
+                    <input type="text" id="quiz-subject" placeholder="Subject" required>
+                    <select id="quiz-difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <button type="button" id="create-quiz-btn">Create Quiz</button>
+                </form>
+            </section>
+
+            <section id="add-questions" style="display: none;">
+                <h2>Add Questions</h2>
+                <form id="question-form">
+                    <input type="text" id="question-text" placeholder="Question" required>
+                    <input type="text" class="option" placeholder="Option 1" required>
+                    <input type="text" class="option" placeholder="Option 2" required>
+                    <input type="text" class="option" placeholder="Option 3" required>
+                    <input type="text" class="option" placeholder="Option 4" required>
+                    <input type="text" id="correct-answer" placeholder="Correct Answer" required>
+                    <button type="button" id="add-question-btn">Add Question</button>
+                </form>
+                <button type="button" id="finish-quiz-btn">Finish Quiz</button>
+            </section>
+
+            <section id="take-quiz">
+                <h2>Take a Quiz</h2>
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <h1 class= "quiz-heading">Quizzes</h1>
+                <div id="quiz-list"></div>
+            </section>
+
+            <section id="quiz-results" style="display: none;">
+                <h2>Quiz Results</h2>
+                <div id="results"></div>
+            </section>
+        </main>
+    </div>
+
+
+    <!-- Modal Structure -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-question-text"></h2>
+            <form id="modal-options-form"></form>
+            <button id="submit-answer-btn">Submit Answer</button>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
